@@ -23,7 +23,7 @@ const db = knex({
 const app = express();
 
 app.use(cors({
-  origin: 'https://127.0.0.1:3000'
+  origin: '*'
 }));
 app.use(express.json());
 
