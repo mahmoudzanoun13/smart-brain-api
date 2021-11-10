@@ -22,12 +22,10 @@ const db = knex({
 
 const app = express();
 
+app.use(cors({
+  origin: '*'
+}));
 app.use(express.json());
-app.use(cors());
-app.use(function (req, res, next) {
-  res.set('Access-Control-Allow-Origin', 'https://localhost:3000');
-  next();
-});
 
 app.get('/', (req, res) => {res.json('it is working')})
 app.post('/register', handleRegister(db, bcrypt))
