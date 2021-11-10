@@ -23,7 +23,10 @@ const db = knex({
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://localhost:3000",
+  credentials: true
+}));
 app.use(function (req, res, next) {
   res.set('Access-Control-Allow-Origin', 'https://localhost:3000');
   next();
