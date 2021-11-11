@@ -27,7 +27,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {res.json('it is working')}, 
-  app.headers( { "Access-Control-Allow-Origin": "*" } ))
+  app.headers( { "Access-Control-Allow-Origin": "http://127.0.0.1:3000/" } ))
 app.post('/register', handleRegister(db, bcrypt))
 app.post('/signin', (req, res) => {handleSignin(req, res, db, bcrypt)})
 app.get('/profile/:id', (req, res) => {handleProfileGet(req, res, db)})
