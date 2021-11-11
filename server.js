@@ -27,12 +27,15 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
-/*app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    );
+  res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT, OPTIONS');
   next();
-});*/
+});
 
 app.use(express.json());
 
