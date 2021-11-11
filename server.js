@@ -28,7 +28,9 @@ app.use(cors({
 }));
 
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://127.0.0.1:3000");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Request-Method", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Request-Headers: Content-Type", "x-requested-with");
   next();
 });
 
