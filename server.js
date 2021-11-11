@@ -24,7 +24,9 @@ const app = express();
 
 app.use(cors({
   origin: 'http://127.0.0.1:3000/',
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+  'Access-Control-Allow-Headers': 'Content-Type'
 }));
 
 app.use(express.json());
