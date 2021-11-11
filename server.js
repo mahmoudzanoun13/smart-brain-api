@@ -22,7 +22,10 @@ const db = knex({
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  optionsSuccessStatus: 200
+}));
 
 app.use(express.json());
 
