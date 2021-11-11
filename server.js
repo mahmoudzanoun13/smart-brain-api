@@ -22,10 +22,13 @@ const db = knex({
 
 const app = express();
 
-app.use(cors({
+app.use(cors());
+
+/*app.use(cors({
   origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE']
-}));
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  optionsSuccessStatus: 200
+}));*/
 
 /*app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
