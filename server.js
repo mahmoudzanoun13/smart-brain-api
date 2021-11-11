@@ -24,16 +24,15 @@ const app = express();
 
 app.use(cors({
   origin: 'http://127.0.0.1:3000',
-  optionsSuccessStatus: 200,
-  credentials: true
+  optionsSuccessStatus: 200
 }));
 
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'origin');
+/*app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   next();
-});
+});*/
 
 app.use(express.json());
 
