@@ -22,18 +22,7 @@ const db = knex({
 
 const app = express();
 
-app.use(cors({
-  origin: 'http://127.0.0.1:3000/',
-  optionsSuccessStatus: 200
-}));
-
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:3000/');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
-});
+app.use(cors());
 
 app.use(express.json());
 
