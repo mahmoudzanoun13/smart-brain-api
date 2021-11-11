@@ -24,7 +24,8 @@ const app = express();
 
 app.use(cors({
   origin: '*',
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  credentials: true
 }));
 
 app.use(function (req, res, next) {
