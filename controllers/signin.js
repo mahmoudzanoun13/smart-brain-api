@@ -1,6 +1,6 @@
 export const handleSignin = (req, res, db, bcrypt) => {
-  const { name, email, password } = req.body;
-  if (!name || !email || !password) {
+  const { email, password } = req.body;
+  if (!email || !password) {
     return res.status(400).json('incorrect form submission');
   }
   db.select('email', 'hash').from('login')
