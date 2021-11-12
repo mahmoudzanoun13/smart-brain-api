@@ -7,45 +7,21 @@ import {handleSignin} from './controllers/signin.js';
 import {handleProfileGet} from './controllers/profile.js';
 import {handleImage, handleApiCall} from './controllers/image.js';
 
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 const db = knex({
   client: 'pg',
   connection: {
-    //connectionString: process.env.DATABASE_URL,
-    //ssl: true
-    host: '127.0.0.1',
-    port: 5432,
-    user: 'postgres',
-    password: '01284071645.mano.55.z',
-    database: 'smart-brain'
+    /*ssl: {
+      rejectUnauthorized: false
+    }*/
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
 const app = express();
 
 app.use(cors())
-
-/*app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin", "*"
-  )
-  next();
-})*/
-
-/*app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  optionsSuccessStatus: 200
-}));*/
-
-/*app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type'
-    );
-  res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT, OPTIONS');
-  next();
-});*/
 
 app.use(express.json());
 
